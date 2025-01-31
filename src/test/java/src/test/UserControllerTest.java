@@ -65,6 +65,7 @@ class UserControllerTest {
         Response response = userController.register(body);
         Assertions.assertEquals(HttpStatus.Conflict.getCode(), response.getStatusCode());
         Assertions.assertEquals(responseMessage, response.getContent());
+        //already registered
 
 
 

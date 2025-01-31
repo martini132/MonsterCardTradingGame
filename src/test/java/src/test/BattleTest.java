@@ -46,6 +46,7 @@ class BattleTest {
 
         UserDeckDTO winner = (UserDeckDTO) getMonsterFightMethod().invoke(UserDeckDTO.class, dto1, dto2, c1, c2);
         assertEquals(dto2.getUser().getUsername(), winner.getUser().getUsername());
+        //winner Fire elves
     }
 
     @Test
@@ -65,6 +66,7 @@ class BattleTest {
 
         UserDeckDTO winner = (UserDeckDTO) getMonsterFightMethod().invoke(UserDeckDTO.class, dto1, dto2, c1, c2);
         assertEquals(dto2.getUser().getUsername(), winner.getUser().getUsername());
+        //winner waterspell
     }
 
     @Test
@@ -74,6 +76,7 @@ class BattleTest {
 
         UserDeckDTO winner = (UserDeckDTO) getElementFightMethod().invoke(UserDeckDTO.class, dto1, dto2, c1, c2);
         assertEquals(dto1.getUser().getUsername(), winner.getUser().getUsername());
+        //winner more damage
     }
 
     @Test
@@ -83,6 +86,7 @@ class BattleTest {
 
         UserDeckDTO winner = (UserDeckDTO) getMonsterFightMethod().invoke(UserDeckDTO.class, dto1, dto2, c1, c2);
         assertEquals(dto1.getUser().getUsername(), winner.getUser().getUsername());
+        //winner dragon
     }
 
 }

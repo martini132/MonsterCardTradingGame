@@ -37,6 +37,7 @@ class TradingControllerTest {
 
         assertEquals(HttpStatus.CREATED.getCode(), response.getStatusCode());
         assertEquals("Created", response.getContent());
+        //trade done
     }
 
     @Test
@@ -49,6 +50,7 @@ class TradingControllerTest {
 
         assertEquals(HttpStatus.OK.getCode(), response.getStatusCode());
         assertEquals("Trading was deleted", response.getContent());
+        //Trade deleted
 
     }
 
@@ -60,5 +62,6 @@ class TradingControllerTest {
 
         assertEquals(HttpStatus.NOT_FOUND.getCode(),response.getStatusCode());
         assertEquals("The provided deal ID was not found.",response.getContent());
+        //try delete non exsiting Trade
     }
 }

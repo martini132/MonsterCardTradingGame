@@ -30,14 +30,14 @@ public class DeckDao implements DAO<Deck> {
         stmt.setString(1, deck.getDeckId());
         stmt.setString(2, deck.getUserId());
 
-        System.out.println("📌 Versuche Deck zu erstellen: " + deck.getDeckId() + " für User: " + deck.getUserId());
+        System.out.println("Versuche Deck zu erstellen: " + deck.getDeckId() + " für User: " + deck.getUserId());
 
         int result = stmt.executeUpdate();
         if (result > 0) {
-            System.out.println("✅ Deck erfolgreich erstellt!");
+            System.out.println("Deck erfolgreich erstellt!");
             return true;
         } else {
-            System.out.println("❌ Fehler: Deck wurde nicht gespeichert!");
+            System.out.println("Fehler: Deck wurde nicht gespeichert!");
             return false;
         }
     }

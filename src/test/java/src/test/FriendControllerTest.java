@@ -33,6 +33,7 @@ class FriendControllerTest {
         Response response = friendController.sendFriendReuest("someId", "josef");
         assertEquals(HttpStatus.Forbidden.getCode(), response.getStatusCode());
         assertEquals("User does not exist or you tried to send a friend request to you", response.getContent());
+        //friend does not exist
 
     }
 
@@ -46,6 +47,7 @@ class FriendControllerTest {
 
         assertEquals(HttpStatus.Forbidden.getCode(), response.getStatusCode());
         assertEquals("User does not exist or you tried to send a friend request to you", response.getContent());
+        //selfcheck
 
     }
 
@@ -59,6 +61,7 @@ class FriendControllerTest {
 
         assertEquals(HttpStatus.OK.getCode(), response.getStatusCode());
         assertEquals("Friend Request is sent", response.getContent());
+        //FriendRequest done
 
     }
 
@@ -75,6 +78,7 @@ class FriendControllerTest {
 
         assertEquals(HttpStatus.OK.getCode(), response.getStatusCode());
         assertEquals("Friend request accepted", response.getContent());
+        // friend accept
 
     }
 }

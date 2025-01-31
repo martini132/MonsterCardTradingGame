@@ -39,6 +39,7 @@ class PackageControllerTest {
 
         assertEquals(HttpStatus.Forbidden.getCode(), response.getStatusCode());
         assertEquals("Provided user is not admin", response.getContent());
+        //only admin
     }
 
 
@@ -48,6 +49,7 @@ class PackageControllerTest {
         Response response = packageController.buyPackage(null);
         assertEquals(HttpStatus.Unauthorized.getCode(), response.getStatusCode());
         assertEquals("Token Missing/Token invalid", response.getContent());
+        //buy without Token
     }
 
 
@@ -59,12 +61,13 @@ class PackageControllerTest {
 
         assertEquals(HttpStatus.NOT_FOUND.getCode(), response.getStatusCode());
         assertEquals("No packages for buying available", response.getContent());
+        //no packages
     }
 
     @Test
     void buyPackage_SuccessfullyBought() throws JsonProcessingException {
 
-        //@JsonProperty("Id") String id, @JsonProperty("Name") String name, @JsonProperty("Damage"
+
 
         List<Card> cards = new LinkedList<>();
         cards.add(new SpellCard("someId", "WaterSpell", 40));
@@ -85,5 +88,7 @@ class PackageControllerTest {
 
         assertEquals(HttpStatus.OK.getCode(), response.getStatusCode());
         assertEquals(s, response.getContent());
+
+        //package bought
     }
 }
